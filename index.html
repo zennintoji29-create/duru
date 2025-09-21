@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Durga Puja Wishing Card - Durjoy Ghosh</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background music (YouTube embed) -->
+  <iframe id="bg-video" width="1" height="1" style="opacity:0;"
+          src="https://www.youtube.com/embed/VenNSdz6SjI?autoplay=1&loop=1&playlist=VenNSdz6SjI&mute=1"
+          frameborder="0" allow="autoplay"></iframe>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-content">
+      <h1>🌸 Shubho Durga Puja! 🌸</h1>
+      <p>May Maa Durga's divine blessings bring you strength and joy!</p>
+      <p class="name">From: Durjoy Ghosh</p>
+    </div>
+  </div>
+
+  <!-- Falling petals via JS -->
+  <script>
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (6 + Math.random() * 5) + 's';
+      document.body.appendChild(petal);
+
+      setTimeout(() => {
+        petal.remove();
+      }, 12000);
+    }
+    setInterval(createPetal, 400);
+  </script>
+</body>
+</html>
